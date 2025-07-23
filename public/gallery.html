@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroScout Services - Mission Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        flagRed: "#C62828",
+                        parchment: "#F5F5DC",
+                        oldGold: "#B39264",
+                        midnight: "#0A0A0A",
+                        oldNavy: "#003366",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        stencil: ['"Special Elite"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/flag-bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .filter-btn.active {
+            background-color: #B39264;
+            color: #0A0A0A;
+        }
+    </style>
+</head>
+<body class="font-sans text-parchment min-h-screen">
+    <!-- Background Overlay -->
+    <div class="fixed inset-0 backdrop-blur-sm bg-black/20 z-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-slate-800/90 backdrop-blur-sm border-b border-amber-600/60 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <img src="/eagle-swoop.png" alt="AeroScout Logo" class="h-10 w-auto">
+                <h1 class="text-amber-400 text-xl font-stencil tracking-wide">AEROSCOUT</h1>
+            </a>
+            <a href="/" class="text-amber-100 hover:text-amber-300 transition-colors duration-200">
+                ← Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="relative z-10 pt-24 pb-16">
+        <!-- Header -->
+        <div class="text-center mb-12 px-6">
+            <h1 class="text-5xl md:text-6xl font-stencil text-amber-300 mb-6">
+                Mission Gallery
+            </h1>
+            <p class="text-lg text-parchment/90 max-w-3xl mx-auto">
+                Explore our comprehensive portfolio of aerial operations, surveillance missions, and technical capabilities. 
+                Each image represents our commitment to precision, security, and excellence.
+            </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 px-6">
+            <button class="filter-btn active px-6 py-3 bg-slate-800/80 text-amber-100 rounded-lg border border-amber-600/60 hover:bg-amber-600/80 hover:text-white transition-all duration-300" data-filter="all">
+                All Missions
+            </button>
+            <button class="filter-btn px-6 py-3 bg-slate-800/80 text-amber-100 rounded-lg border border-amber-600/60 hover:bg-amber-600/80 hover:text-white transition-all duration-300" data-filter="surveillance">
+                Surveillance
+            </button>
+            <button class="filter-btn px-6 py-3 bg-slate-800/80 text-amber-100 rounded-lg border border-amber-600/60 hover:bg-amber-600/80 hover:text-white transition-all duration-300" data-filter="thermal">
+                Thermal Imaging
+            </button>
+            <button class="filter-btn px-6 py-3 bg-slate-800/80 text-amber-100 rounded-lg border border-amber-600/60 hover:bg-amber-600/80 hover:text-white transition-all duration-300" data-filter="mapping">
+                Mapping & Survey
+            </button>
+            <button class="filter-btn px-6 py-3 bg-slate-800/80 text-amber-100 rounded-lg border border-amber-600/60 hover:bg-amber-600/80 hover:text-white transition-all duration-300" data-filter="emergency">
+                Emergency Response
+            </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Surveillance Items -->
+                <div class="gallery-item" data-category="surveillance">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Aerial Reconnaissance" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Surveillance</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Aerial Reconnaissance</h3>
+                                <p class="text-parchment/80 text-sm">High-altitude surveillance operations with precision targeting capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="surveillance">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Night Patrol" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Surveillance</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Night Patrol</h3>
+                                <p class="text-parchment/80 text-sm">24/7 monitoring capabilities for secure perimeter surveillance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thermal Items -->
+                <div class="gallery-item" data-category="thermal">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Thermal Detection" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Thermal</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Thermal Detection</h3>
+                                <p class="text-parchment/80 text-sm">Advanced thermal imaging for heat signature identification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="thermal">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Infrared Scan" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Thermal</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Infrared Scan</h3>
+                                <p class="text-parchment/80 text-sm">Precision infrared scanning for concealed threat detection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapping Items -->
+                <div class="gallery-item" data-category="mapping">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="3D Site Mapping" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Mapping</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">3D Site Mapping</h3>
+                                <p class="text-parchment/80 text-sm">High-precision aerial photogrammetry for detailed terrain mapping.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="mapping">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Topographic Survey" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Mapping</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Topographic Survey</h3>
+                                <p class="text-parchment/80 text-sm">Comprehensive topographic analysis for strategic planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Items -->
+                <div class="gallery-item" data-category="emergency">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Emergency Response" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Emergency</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Emergency Response</h3>
+                                <p class="text-parchment/80 text-sm">Rapid deployment for critical emergency situations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="emergency">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Search & Rescue" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Emergency</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Search & Rescue</h3>
+                                <p class="text-parchment/80 text-sm">Advanced search and rescue operations in challenging terrain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Items -->
+                <div class="gallery-item" data-category="surveillance">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Perimeter Security" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Surveillance</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Perimeter Security</h3>
+                                <p class="text-parchment/80 text-sm">Comprehensive perimeter monitoring and threat assessment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="thermal">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Heat Signature Analysis" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Thermal</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Heat Signature Analysis</h3>
+                                <p class="text-parchment/80 text-sm">Advanced thermal analysis for precise threat identification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="mapping">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Volume Calculations" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Mapping</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Volume Calculations</h3>
+                                <p class="text-parchment/80 text-sm">Precise volume and area calculations for project planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="emergency">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg bg-black/40 backdrop-blur-sm">
+                        <img src="/eagle-swoop.png" alt="Disaster Assessment" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">Emergency</div>
+                                <h3 class="text-white font-semibold text-lg mb-2">Disaster Assessment</h3>
+                                <p class="text-parchment/80 text-sm">Rapid disaster assessment and damage evaluation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-20 bg-slate-800/95 text-amber-100 border-t-2 border-amber-600/60 py-8 px-6 shadow-lg">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="/eagle-swoop.png" alt="AeroScout Logo" class="w-12 h-auto">
+                <span class="font-stencil text-lg text-amber-400 tracking-widest">AEROSCOUT</span>
+            </div>
+            <div class="text-xs text-amber-300/70 text-center md:text-right">
+                © 2024 AeroScout Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s ease-in-out';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
