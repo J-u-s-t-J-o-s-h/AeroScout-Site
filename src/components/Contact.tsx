@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 px-6"
+      className="relative py-16 sm:py-20 px-4 sm:px-6"
     >
       {/* Elegant blur overlay */}
       <div className="absolute inset-0 backdrop-blur-md bg-black/20 z-0"></div>
@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-4xl md:text-5xl font-stencil text-oldGold mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl font-stencil text-oldGold mb-4 sm:mb-6"
         >
           Get in Touch
         </motion.h2>
@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-lg text-parchment/90 mb-10"
+          className="text-base sm:text-lg text-parchment/90 mb-8 sm:mb-10"
         >
           Have a project, need a quote, or want to learn more? Drop us a message and we'll get back to you promptly.
         </motion.p>
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="grid gap-6 text-left"
+          className="grid gap-4 sm:gap-6 text-left"
           onSubmit={(e) => {
             e.preventDefault();
             alert("Form submission disabled for demo.");
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
             <label className="block text-sm mb-1 text-parchment">Name</label>
             <input
               type="text"
-              className="w-full px-4 py-2 bg-parchment/95 text-midnight rounded focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-parchment/95 text-midnight rounded focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm text-sm sm:text-base"
               required
             />
           </motion.div>
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
             <label className="block text-sm mb-1 text-parchment">Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 bg-parchment/95 text-midnight rounded focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-parchment/95 text-midnight rounded focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm text-sm sm:text-base"
               required
             />
           </motion.div>
@@ -78,8 +78,8 @@ const Contact: React.FC = () => {
           >
             <label className="block text-sm mb-1 text-parchment">Message</label>
             <textarea
-              rows={5}
-              className="w-full px-4 py-2 bg-parchment/95 text-midnight rounded resize-none focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm"
+              rows={4}
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-parchment/95 text-midnight rounded resize-none focus:outline-none focus:ring-2 focus:ring-oldGold backdrop-blur-sm text-sm sm:text-base"
               required
             />
           </motion.div>
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
             }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="mt-4 bg-oldGold text-midnight font-bold py-3 px-6 rounded hover:bg-flagRed hover:text-white transition duration-300 shadow-lg"
+            className="mt-4 sm:mt-6 bg-oldGold text-midnight font-bold py-3 px-6 sm:px-8 rounded hover:bg-flagRed hover:text-white transition duration-300 shadow-lg text-sm sm:text-base"
           >
             Let's Talk
           </motion.button>
