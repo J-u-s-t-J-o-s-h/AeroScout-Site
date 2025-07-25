@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <img
             src="/eagle-swoop.png"
             alt="AeroScout Logo"
-            className="w-8 h-auto sm:w-12"
+            className="w-10 h-auto sm:w-14 md:w-16"
           />
           <span className="font-stencil text-sm sm:text-lg text-amber-400 tracking-widest">
             AEROSCOUT
