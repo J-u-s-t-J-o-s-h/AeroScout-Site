@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+/* Mobile-specific background fixes */
+@media (max-width: 768px) {
+  .mobile-bg-fix {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* Ensure background works properly on all devices */
+.background-container {
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

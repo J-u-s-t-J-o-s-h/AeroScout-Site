@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
-import Gallery from "./components/Gallery";
+import GalleryPreview from "./components/GalleryPreview";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackgroundOverlay from './components/BackgroundOverlay';
@@ -16,17 +16,17 @@ function HomePage() {
         backgroundImage: "url('/flag-bg.jpg')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
         backgroundPosition: "center",
+        backgroundAttachment: "scroll", // Changed from "fixed" to "scroll" for mobile compatibility
       }}
-      className="min-h-screen font-sans text-parchment"
+      className="min-h-screen font-sans text-parchment mobile-bg-fix"
     >
       <BackgroundOverlay />
       <Navbar />
       <Hero />
       <About />
       <Services />
-      <Gallery />
+      <GalleryPreview />
       <Contact />
       <Footer />
     </div>

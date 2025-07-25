@@ -109,10 +109,10 @@ const Gallery = () => {
         backgroundImage: "url('/flag-bg.jpg')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
         backgroundPosition: "center",
+        backgroundAttachment: "scroll", // Changed from "fixed" to "scroll" for mobile compatibility
       }}
-      className="min-h-screen font-sans text-parchment"
+      className="min-h-screen font-sans text-parchment mobile-bg-fix"
     >
       {/* Background Overlay */}
       <div className="fixed inset-0 backdrop-blur-sm bg-black/20 z-0"></div>
